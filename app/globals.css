@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-cinzel), "Times New Roman", serif;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --color-gold-300: #e6c88b;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #c5a880;
+  --color-ivory: #f8f6f1;
+  --color-ivory-warm: #f4f1ea;
+  --color-stone-light: #efece4;
+  --color-charcoal: #1c1b1a;
+  --color-charcoal-muted: #57544e;
+}
+
+:root {
+  --background: #f8f6f1;
+  --foreground: #1c1b1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #f8f6f1;
+  color: #1c1b1a;
+  scroll-behavior: auto;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  background-color: #f8f6f1;
+  color: #1c1b1a;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom minimal warm scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f6f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d3c8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b1a2;
+}
+
+::selection {
+  background-color: #c5a880;
+  color: #1c1b1a;
+}
+
+/* Text stroke utility for architectural luxury typography */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(28, 27, 26, 0.12);
+  color: transparent;
+}
+.text-stroke-subtle {
+  -webkit-text-stroke: 1px rgba(28, 27, 26, 0.06);
+  color: transparent;
+}
+
+/* Lenis smooth scrolling classes */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
