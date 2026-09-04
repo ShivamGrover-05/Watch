@@ -3,6 +3,7 @@
 import { useState } from "react";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 import HeroShowcase, { WatchVariant } from "@/components/HeroShowcase";
 import EditorialSection from "@/components/EditorialSection";
 import StorySection from "@/components/StorySection";
@@ -46,7 +47,10 @@ export default function Home() {
           onOpenCart={() => setCartOpen(true)}
         />
 
-        {/* HERO SECTION: Full-Screen Width, Cardless, Horizontal Watch Slide */}
+        {/* HERO SECTION: Rich Navy Video Background & Editorial Brand Essence */}
+        <Hero />
+
+        {/* WATCH SHOWCASE: Existing Watch Animation (Sliding Image, Synced Heading, 4 Variants) */}
         <HeroShowcase onAddToCart={handleAddToCart} />
 
         {/* EDITORIAL SECTION: Craftsmanship & Horology Philosophy */}

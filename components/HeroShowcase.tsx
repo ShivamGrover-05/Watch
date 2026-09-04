@@ -225,8 +225,8 @@ export default function HeroShowcase({ onAddToCart }: HeroShowcaseProps) {
 
   return (
     <section
-      id="hero"
-      className="hero-section relative min-h-screen w-full bg-[#F8F6F1] text-[#1C1B1A] flex flex-col justify-between pt-24 pb-8 overflow-hidden select-none"
+      id="collection"
+      className="collection-section relative min-h-screen w-full bg-[#F8F6F1] text-[#1C1B1A] flex flex-col justify-between pt-20 pb-8 overflow-hidden select-none"
     >
       {/* ========================================================================= */}
       {/* STATIC LIGHT BACKGROUND: Warm Ivory with soft natural lighting            */}
