@@ -41,5 +41,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# root raw media
-/hero section video.mp4

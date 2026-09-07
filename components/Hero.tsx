@@ -113,6 +113,7 @@ export default function Hero({ onExploreClick }: HeroProps) {
             videoLoaded ? "opacity-100" : "opacity-90"
           }`}
         >
+          <source src="/videos/hero-section-video.mp4" type="video/mp4" />
           <source src="/videos/hero section video.mp4" type="video/mp4" />
         </video>
 
