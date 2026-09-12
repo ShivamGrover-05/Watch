@@ -73,11 +73,6 @@ export default function EditorialSection() {
       ref={containerRef}
       className="relative min-h-screen py-28 sm:py-36 px-6 sm:px-12 bg-[#F4F1EA] text-[#1C1B1A] overflow-hidden"
     >
-      {/* Editorial Watermark & Architectural Coordinates */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between text-[10px] tracking-[0.35em] uppercase text-[#76726B] font-mono border-b border-[#E0DACF] pb-6 mb-16 sm:mb-24">
-        <span>ESSAY 04 • THE CHRONOMETRIC DISCIPLINE</span>
-        <span className="hidden sm:inline">VALLÉE DE JOUX, SWITZERLAND</span>
-      </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Large Statement Typography */}
