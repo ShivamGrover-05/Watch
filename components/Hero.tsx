@@ -41,7 +41,7 @@ export default function Hero({ onExploreClick }: HeroProps) {
       {/* Hero Video Display */}
       <video
         ref={videoRef}
-        src="/videos/hero-section-video.mp4"
+        src="/videos/hero-section-video_gwr_video_mvp.mp4"
         autoPlay
         loop
         muted
@@ -52,8 +52,7 @@ export default function Hero({ onExploreClick }: HeroProps) {
           videoLoaded ? "opacity-100" : "opacity-90"
         }`}
       >
-        <source src="/videos/hero-section-video.mp4" type="video/mp4" />
-        <source src="/videos/hero section video.mp4" type="video/mp4" />
+        <source src="/videos/hero-section-video_gwr_video_mvp.mp4" type="video/mp4" />
       </video>
     </section>
   );
