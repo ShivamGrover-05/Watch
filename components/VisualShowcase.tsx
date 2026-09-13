@@ -37,10 +37,10 @@ export interface WatchVariant {
 export const WATCH_VARIANTS: WatchVariant[] = [
   {
     id: "aurelia",
-    code: "01",
+    code: "•",
     name: "AURELIA",
     subtitle: "Automatic Chronograph",
-    collection: "Atelier Series 01",
+    collection: "Atelier Series",
     price: "$4,800.00",
     numericPrice: 4800,
     image: "/images/watch_glacier.jpg",
@@ -57,10 +57,10 @@ export const WATCH_VARIANTS: WatchVariant[] = [
   },
   {
     id: "nocturne",
-    code: "02",
+    code: "•",
     name: "NOCTURNE",
     subtitle: "Automatic Chronometer",
-    collection: "Atelier Series 02",
+    collection: "Atelier Series",
     price: "$5,600.00",
     numericPrice: 5600,
     image: "/images/watch_nocturne.jpg",
@@ -77,10 +77,10 @@ export const WATCH_VARIANTS: WatchVariant[] = [
   },
   {
     id: "chronos",
-    code: "03",
+    code: "•",
     name: "CHRONOS",
     subtitle: "Mechanical Chronograph",
-    collection: "Atelier Series 03",
+    collection: "Atelier Series",
     price: "$6,200.00",
     numericPrice: 6200,
     image: "/images/watch_solstice.jpg",
@@ -97,10 +97,10 @@ export const WATCH_VARIANTS: WatchVariant[] = [
   },
   {
     id: "eclipse",
-    code: "04",
+    code: "•",
     name: "ÉCLIPSE",
     subtitle: "Automatic Tourbillon",
-    collection: "Atelier Series 04",
+    collection: "Atelier Series",
     price: "$7,100.00",
     numericPrice: 7100,
     image: "/images/watch_eclipse.jpg",
@@ -257,7 +257,7 @@ export default function VisualShowcase({ onAddToCart }: VisualShowcaseProps) {
       <div className="watch-info flex-1 flex flex-col justify-center text-center lg:text-left w-full max-w-lg lg:pl-6">
         <div>
           <span className="text-[11px] tracking-[0.3em] uppercase text-zinc-400 font-mono font-medium">
-            {watch.code} • {watch.collection}
+            {watch.collection}
           </span>
         </div>
 
@@ -340,28 +340,21 @@ export default function VisualShowcase({ onAddToCart }: VisualShowcaseProps) {
               <button
                 key={watch.id}
                 onClick={() => triggerTransition(idx)}
-                className={`relative px-4 py-2.5 rounded-xl text-left transition-all duration-300 flex flex-col justify-between cursor-pointer ${
+                className={`relative px-4 py-2.5 sm:py-3 rounded-xl text-left transition-all duration-300 flex items-center justify-start gap-2.5 cursor-pointer ${
                   isActive
                     ? "bg-zinc-950 text-white shadow-md scale-[1.02]"
                     : "hover:bg-zinc-100 text-zinc-600 hover:text-zinc-900"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <span
-                    className={`font-mono text-[10px] tracking-widest ${
-                      isActive ? "text-[#c5a880]" : "text-zinc-400"
-                    }`}
-                  >
-                    {watch.code}
-                  </span>
-                  <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: watch.dialColor }}
-                  />
-                </div>
-                <div className="mt-1 font-serif font-medium text-xs sm:text-sm tracking-wider uppercase truncate">
+                <span
+                  className={`w-2.5 h-2.5 rounded-full shrink-0 transition-transform duration-300 ${
+                    isActive ? "scale-110 shadow-xs" : "opacity-80"
+                  }`}
+                  style={{ backgroundColor: watch.dialColor }}
+                />
+                <span className="font-serif font-medium text-xs sm:text-sm tracking-wider uppercase truncate">
                   {watch.name}
-                </div>
+                </span>
 
                 {/* Active Indicator Underline */}
                 {isActive && (

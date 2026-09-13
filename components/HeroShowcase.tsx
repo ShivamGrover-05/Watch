@@ -37,10 +37,10 @@ export interface WatchVariant {
 export const WATCH_VARIANTS: WatchVariant[] = [
   {
     id: "aurelia",
-    code: "01",
+    code: "•",
     name: "AURELIA",
     subtitle: "Automatic Chronograph",
-    collection: "Atelier Series 01",
+    collection: "Atelier Series",
     price: "$4,800.00",
     numericPrice: 4800,
     image: "/images/watch_aurelia_transparent.png",
@@ -57,10 +57,10 @@ export const WATCH_VARIANTS: WatchVariant[] = [
   },
   {
     id: "nocturne",
-    code: "02",
+    code: "•",
     name: "NOCTURNE",
     subtitle: "Automatic Chronometer",
-    collection: "Atelier Series 02",
+    collection: "Atelier Series",
     price: "$5,600.00",
     numericPrice: 5600,
     image: "/images/watch_nocturne_transparent.png",
@@ -77,10 +77,10 @@ export const WATCH_VARIANTS: WatchVariant[] = [
   },
   {
     id: "chronos",
-    code: "03",
+    code: "•",
     name: "CHRONOS",
     subtitle: "Mechanical Chronograph",
-    collection: "Atelier Series 03",
+    collection: "Atelier Series",
     price: "$6,200.00",
     numericPrice: 6200,
     image: "/images/watch_chronos_transparent.png",
@@ -97,10 +97,10 @@ export const WATCH_VARIANTS: WatchVariant[] = [
   },
   {
     id: "eclipse",
-    code: "04",
+    code: "•",
     name: "ÉCLIPSE",
     subtitle: "Automatic Tourbillon",
-    collection: "Atelier Series 04",
+    collection: "Atelier Series",
     price: "$7,100.00",
     numericPrice: 7100,
     image: "/images/watch_eclipse_transparent.png",
@@ -322,7 +322,7 @@ export default function HeroShowcase({ onAddToCart }: HeroShowcaseProps) {
             {/* Static Ticker / Series Badge */}
             <div className="flex items-center justify-center lg:justify-start gap-3">
               <span className="text-[10px] tracking-[0.4em] uppercase text-[#9E8056] font-mono font-semibold">
-                {currentWatch.code} • {currentWatch.collection}
+                {currentWatch.collection}
               </span>
               <span className="text-[#C5BFB5]">•</span>
               <span className="text-[10px] tracking-[0.25em] uppercase text-[#76726B] font-mono">
@@ -376,27 +376,27 @@ export default function HeroShowcase({ onAddToCart }: HeroShowcaseProps) {
 
                 <button
                   onClick={() => setSpecsOpen(true)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#EDE8DF] border border-[#E0DACF] hover:border-[#C5A880] text-xs font-medium text-[#1C1B1A] hover:text-[#9E8056] transition-all group cursor-pointer shadow-xs"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#EDE8DF] hover:bg-[#E5DFD4] border border-[#E0DACF] text-xs font-medium text-[#57544E] hover:text-[#1C1B1A] transition-all cursor-pointer group"
                 >
                   <Sliders className="w-3.5 h-3.5 text-[#9E8056] group-hover:rotate-45 transition-transform" />
                   <span>Specifications</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#76726B] group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
 
-              {/* Row 2: Reserve Timepiece CTA + Technical Dossier Button */}
-              <div className="mt-5 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              {/* Row 2: Reserve Watch Button + Technical Dossier Button */}
+              <div className="mt-4 flex flex-col sm:flex-row items-center gap-3">
                 <button
                   onClick={() => handleAddToCart(currentWatch)}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#1C1B1A] hover:bg-[#33312E] text-[#FAF8F5] font-semibold text-xs tracking-[0.2em] uppercase transition-all shadow-md hover:shadow-lg active:scale-95 group cursor-pointer"
+                  className="w-full sm:w-auto flex-1 flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-[#1C1B1A] hover:bg-[#33312E] text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg active:scale-98 cursor-pointer"
                 >
                   <span>Reserve Timepiece</span>
-                  <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <ShoppingBag className="w-4 h-4 text-[#C5A880]" />
                 </button>
 
                 <button
                   onClick={() => setSpecsOpen(true)}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/70 hover:bg-white border border-[#D5CFBF] text-[#57544E] hover:text-[#1C1B1A] text-xs tracking-widest uppercase transition-colors cursor-pointer shadow-xs"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F3EFE8] text-[#1C1B1A] border border-[#D5CFBF] text-xs font-medium tracking-wider uppercase transition-colors cursor-pointer"
                 >
                   <span>Technical Dossier</span>
                 </button>
@@ -433,28 +433,21 @@ export default function HeroShowcase({ onAddToCart }: HeroShowcaseProps) {
               <button
                 key={watch.id}
                 onClick={() => triggerTransition(idx)}
-                className={`relative px-4 py-3 rounded-xl text-left transition-all duration-300 flex flex-col justify-between cursor-pointer ${
+                className={`relative px-4 py-3 sm:py-3.5 rounded-xl text-left transition-all duration-300 flex items-center justify-start gap-2.5 cursor-pointer ${
                   isActive
                     ? "bg-white text-[#1C1B1A] shadow-sm border border-[#D5CFBF] scale-[1.02]"
                     : "hover:bg-white/50 text-[#76726B] hover:text-[#1C1B1A] border border-transparent"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <span
-                    className={`font-mono text-[10px] tracking-widest ${
-                      isActive ? "text-[#9E8056] font-semibold" : "text-[#8E8A81]"
-                    }`}
-                  >
-                    {watch.code}
-                  </span>
-                  <span
-                    className="w-2.5 h-2.5 rounded-full border border-black/15"
-                    style={{ backgroundColor: watch.dialColor }}
-                  />
-                </div>
-                <div className="mt-1.5 font-serif font-medium text-xs sm:text-sm tracking-wider uppercase truncate">
+                <span
+                  className={`w-2.5 h-2.5 rounded-full border border-black/15 shrink-0 transition-transform duration-300 ${
+                    isActive ? "scale-110 shadow-xs" : "opacity-80"
+                  }`}
+                  style={{ backgroundColor: watch.dialColor }}
+                />
+                <span className="font-serif font-medium text-xs sm:text-sm tracking-wider uppercase truncate">
                   {watch.name}
-                </div>
+                </span>
 
                 {/* Active Indicator Underline */}
                 {isActive && (
